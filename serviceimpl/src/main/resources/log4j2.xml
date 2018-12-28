@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration status="OFF">
-    <appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
-    </appenders>
-    <loggers>
-        <root level="info">
-            <appender-ref ref="Console"/>
-        </root>
-    </loggers>
-</configuration>
+<Configuration monitorInterval="1" status="ERROR" strict="true" name="LogConfig">
+    <Properties>
+        <Property name="log.layout">%d %-5p %t (%c:%L) -%m%n</Property>
+
+        <!-- 虚拟机方式启动 -->
+        <Property name="log.path">logs</Property>
+
+        <!-- 容器方式启动 -->
+        <!--<Property name="log.path">logs/$${env:hostname:-default}</Property>-->
+
+        <!--日志文件可自定义 -->
+        <Property name="log.name">service.log</Property>
+    </Properties>
+
+    <Appenders>
+        <Appender type="Console" name="STDOUT">
+            <Target>SYSTEM_OUT</Target>
+            <Layout type="PatternLayout" pattern="${log.layout}"/>
+        </Appender>
+        <RollingFile name="RollingFile" fileName="${log.path}/${log.name}"
+                     filePattern="${log.path}/${log.name}.%d{yyyy-MM-dd}">
+            <Layout type="PatternLayout" pattern="${log.layout}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${log.path}" maxDepth="1">
+                    <IfFileName glob="${log.name}.*"/>
+                    <IfLastModified age="7d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
