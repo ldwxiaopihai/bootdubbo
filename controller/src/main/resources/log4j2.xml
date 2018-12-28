@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--启动项设置为 trace，加载 springboot 启动内部各种详细输出-->
-<Configuration status="trace">
+<Configuration monitorInterval="1" status="ERROR" strict="true" name="LogConfig">
+    <Properties>
+        <Property name="log.layout">%d %-5p %t (%c:%L) -%m%n</Property>
+
+        <!-- 虚拟机方式启动 -->
+        <Property name="log.path">logs</Property>
+
+        <!-- 容器方式启动 -->
+        <!--<Property name="log.path">logs/$${env:hostname:-default}</Property>-->
+
+        <!--日志文件可自定义 -->
+        <Property name="log.name">control.log</Property>
+    </Properties>
+
     <Appenders>
-        <!--添加一个控制台追加器-->
-        <Console name="Console" target="SYSTEM_OUT" follow="true">
-            <PatternLayout>
-                <pattern>[%-5p] %d %c - %m%n</pattern>
-            </PatternLayout>
-        </Console>
-        <!--添加一个文本追加器，文件位于根目录下，名为log.log-->
-        <File name="File" fileName="log.log">
-            <PatternLayout>
-                <pattern>[%-5p] %d %c - %m%n</pattern>
-            </PatternLayout>
-        </File>
+        <Appender type="Console" name="STDOUT">
+            <Target>SYSTEM_OUT</Target>
+            <Layout type="PatternLayout" pattern="${log.layout}"/>
+        </Appender>
+        <RollingFile name="RollingFile" fileName="${log.path}/${log.name}"
+                     filePattern="${log.path}/${log.name}.%d{yyyy-MM-dd}">
+            <Layout type="PatternLayout" pattern="${log.layout}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${log.path}" maxDepth="1">
+                    <IfFileName glob="${log.name}.*"/>
+                    <IfLastModified age="7d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
     </Appenders>
+
     <Loggers>
-        <Logger name="com.web" level="debug" />
-        <!--记录 qg.fangrui.boot 包及其子包 debug 及其以上的记录，并输出到文件中-->
-        <Logger name="com" level="debug">
-            <!-- AppenderRef 可以控制文件输出对象-->
-            <AppenderRef ref="File" />
-        </Logger>
-        <!--根记录全部输出到控制台上-->
         <Root level="info">
-            <AppenderRef ref="Console" />
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="RollingFile"/>
         </Root>
     </Loggers>
 </Configuration>
