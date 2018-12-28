@@ -30,3 +30,31 @@
 [WARN ] 2018-12-27 15:54:45,292 com.web.HelloController - 警告
 [INFO ] 2018-12-27 15:54:45,292 com.web.HelloController - 标注
 [DEBUG] 2018-12-27 15:54:45,292 com.web.HelloController - 标注
+[INFO ] 2018-12-27 21:58:26,356 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 9456 (E:\csf\bootdubbo\impl1\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-27 21:58:26,365 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-27 21:58:26,366 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-27 21:58:30,808 com.ControlApplication - Started ControlApplication in 4.877 seconds (JVM running for 6.528)
+[INFO ] 2018-12-27 21:59:04,556 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 14104 (E:\csf\bootdubbo\impl1\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-27 21:59:04,579 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-27 21:59:04,581 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-27 21:59:08,560 com.ControlApplication - Started ControlApplication in 4.556 seconds (JVM running for 6.167)
+[INFO ] 2018-12-28 09:11:42,163 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 10272 (E:\csf\bootdubbo\impl1\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-28 09:11:42,173 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-28 09:11:42,173 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-28 09:11:46,483 com.ControlApplication - Started ControlApplication in 5.4 seconds (JVM running for 9.097)
+[INFO ] 2018-12-28 09:12:13,174 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 10532 (E:\csf\bootdubbo\impl1\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-28 09:12:13,184 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-28 09:12:13,184 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-28 09:12:18,414 com.ControlApplication - Started ControlApplication in 5.88 seconds (JVM running for 7.978)
+[INFO ] 2018-12-28 10:30:36,751 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 4200 (E:\csf\bootdubbo\controller\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-28 10:30:36,771 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-28 10:30:36,771 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-28 10:30:41,235 com.ControlApplication - Started ControlApplication in 4.922 seconds (JVM running for 8.053)
+[INFO ] 2018-12-28 10:40:07,423 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 11416 (E:\csf\bootdubbo\controller\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-28 10:40:07,430 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-28 10:40:07,430 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-28 10:40:13,176 com.ControlApplication - Started ControlApplication in 6.263 seconds (JVM running for 8.585)
+[INFO ] 2018-12-28 11:19:40,842 com.ControlApplication - Starting ControlApplication on SKY-20171227VXM with PID 13452 (E:\csf\bootdubbo\controller\target\classes started by Administrator in E:\csf\bootdubbo)
+[DEBUG] 2018-12-28 11:19:40,849 com.ControlApplication - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+[INFO ] 2018-12-28 11:19:40,849 com.ControlApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2018-12-28 11:19:46,154 com.ControlApplication - Started ControlApplication in 5.91 seconds (JVM running for 7.709)
