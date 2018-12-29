@@ -20,8 +20,8 @@ public class HelloController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-     @Reference(url = "dubbo://localhost:20880")
-   /* @Reference(group = "dubbo" )*/
+     /*@Reference(url = "dubbo://localhost:20880")*/
+ @Reference()
 private ITestSV iTestSV;
     @RequestMapping("/hello")
     public String index() {
