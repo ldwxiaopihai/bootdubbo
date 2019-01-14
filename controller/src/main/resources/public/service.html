@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap 模板</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 引入 百度地图 -->
+	<style type="text/css">
+		#allmap
+		{width: 600px;height: 400px;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=oxlPdOL97m7ZxEEnTNY2zEoXD0OyDjTZ"></script>
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+	<h1>进击的小薇薇</h1>
+</div>
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar">1111</span>
+				<span class="icon-bar">222</span>
+				<span class="icon-bar">2333</span>
+			</button>
+			<a class="navbar-brand" href="#">网站名</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">主页</a></li>
+				<li><a href="#">页面 2</a></li>
+				<li><a href="#">页面 3</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h2>关于我</h2>
+			<h5>我的照片:</h5>
+			<div class="fakeimg">
+				<img src="imgs/self.gif"></div>
+			<p>关于我的介绍..</p>
+			<h3>链接</h3>
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">我的努力</a></li>
+				<li><a href="#">我的足迹</a></li>
+				<li><a href="#">我的所有</a></li>
+			</ul>
+			<hr class="hidden-sm hidden-md hidden-lg">
+		</div>
+		<div class="col-sm-8">
+			<h2>元旦来了要学习</h2>
+			<h5>至所有人的一封信</h5>
+			<div class="fakeimg"></div>
+			<p>考上cpa不是梦</p>
+			<p>如果不学习，天打五雷轰，誓不为人！誓不为人！！誓不为人！！！</p>
+			<br>
+			<div id="allmap"></div>
+		</div>
+
+	</div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+	<p>底部内容</p>
+</div>
+
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    //添加地图类型控件
+    map.addControl(new BMap.MapTypeControl({
+        mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+
+</body>
+</html>
